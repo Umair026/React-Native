@@ -7,9 +7,7 @@ export default function () {
     return(
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Home Screen</Text>
-            <Button title='Home screen' onPress={ ()=> {
-                navigation.navigate('');
-            }} />
+            <Button title='Home screen' />
         </View>
     );
 }
