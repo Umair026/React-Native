@@ -1,6 +1,5 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
 import HomeStack from './HomeStack';
 import Details from '../main/details';
 
@@ -10,6 +9,7 @@ export default function (){
     return(
             <Drawer.Navigator initialRouteName='Home'>
                 <Drawer.Screen name='Home' component={HomeStack} />
+                <Drawer.Screen name='Details' component={Details} />
             </Drawer.Navigator>
     );
 }
