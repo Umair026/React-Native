@@ -32,7 +32,12 @@ export default function login({ navigation }) {
             }
 
             }
-            onSubmit={values => Alert.alert(JSON.stringify(values))}
+            onSubmit={values => 
+                {
+                    // Alert.alert(JSON.stringify(values))
+                    navigation.navigate('Otp');
+                } 
+            }
             validationSchema={LoginSchema}
 
         >
