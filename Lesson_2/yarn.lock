@@ -5852,6 +5852,13 @@ react-native-iphone-x-helper@^1.3.0, react-native-iphone-x-helper@^1.3.1:
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
   integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
 
+react-native-otp-textinput@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-otp-textinput/-/react-native-otp-textinput-0.0.7.tgz#c636d86e4472fb0dd4c9e798e7504d0a217114d2"
+  integrity sha512-4q3HVL8a5SCrLy7Fiyv/+4HvUmOSZYC+JvKaQQB1sObyb5v9EcsdtZrK0ffE+7g/u501aIKbDZfhr8flFeGKZw==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-paper@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-4.5.0.tgz#5f1f1e658dbd7a322a299e08ce76e22be44c01d5"
