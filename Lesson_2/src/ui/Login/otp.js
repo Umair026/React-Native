@@ -2,7 +2,9 @@ import * as React from 'react';
 
 import {View,Text,Button} from 'react-native';
 
-import {CommonActions} from '@react-navigation/native';
+import {CommonActions} from '@react-navigation/native';                
+
+
 export default function otp({navigation}) {
 
     return (
@@ -14,7 +16,7 @@ export default function otp({navigation}) {
                     CommonActions.reset({
                       index: 1,
                       routes: [
-                        { name: 'HomeStack' },
+                        { name: 'Home' },
                          ],
                     })
                   );

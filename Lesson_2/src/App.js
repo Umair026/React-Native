@@ -27,7 +27,7 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginStack from './ui/LoginStack';
+import LoginStack from './ui/stacks/LoginStack';
 
 function HomeScreen() {
   return (
