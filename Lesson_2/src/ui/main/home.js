@@ -1,13 +1,12 @@
 import React from 'react';
-
-
 import {View,Text,Button} from 'react-native';
 
-export default function () {
+export default function ({navigation}) {
     return(
+        
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Home Screen</Text>
-            <Button title='Home screen' />
+            <Button title='Go to details' onPress={ ()=> { navigation.navigate('Details')}} />
         </View>
     );
 }
