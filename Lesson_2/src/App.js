@@ -28,6 +28,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginStack from './ui/stacks/LoginStack';
+import DrawerStack from './ui/stacks/DrawerStack';
 
 function HomeScreen() {
   return (
@@ -41,7 +42,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <LoginStack />
+    <DrawerStack />
 
   );
 };
