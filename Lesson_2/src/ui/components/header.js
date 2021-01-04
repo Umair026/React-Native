@@ -5,7 +5,7 @@ import { StyleSheet, View, Text, Button } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
-export default function ({ navigation }) {
+export default function ({ navigation  }) {
     return (
         <View style={styles.header}>
 
@@ -23,7 +23,6 @@ export default function ({ navigation }) {
 
             <MaterialIcon
                 name="bell"
-                onPress={() => navigation.openDrawer()}
                 title="Info"
                 color="black"
                 size={30}
