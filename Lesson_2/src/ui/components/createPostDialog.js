@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Formik } from 'formik';
 import { StyleSheet, Image, TouchableHighlight, View, Text, Button, TextInput } from 'react-native';
 import * as yup from 'yup';
+import FadeInView from './fadeInView';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -25,7 +26,7 @@ export default function ({ navigation, hide, showDialog, addItemPressHandler }) 
         }
 
         return (
-            <View style={styles.parent} >
+            <FadeInView style={styles.parent} >
                 <View style={styles.child}>
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
@@ -104,8 +105,7 @@ export default function ({ navigation, hide, showDialog, addItemPressHandler }) 
                                             />
                                         </View>
 
-
-                                        <Image style={{ width: 50, height: 50}} source={{ uri: imageUri}} />
+                                        <Image style={{ width: 50, height: 50}} source={{ uri: imageUri ? imageUri : null}} />
 
                                         </View>
                                         
@@ -127,7 +127,7 @@ export default function ({ navigation, hide, showDialog, addItemPressHandler }) 
 
                     </View>
                 </View>
-            </View>
+            </FadeInView>
         );
     }
 }

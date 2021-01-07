@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet,View,Text,Button,Image} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import CardView from '../components/CardView'
+import FadeInView from '../components/fadeInView';
 
 export default function Details({ route }) {
 
@@ -9,7 +10,7 @@ export default function Details({ route }) {
     
     return(
         <ScrollView>
-            <View style={styles.detailsContainer}>
+            <FadeInView style={styles.detailsContainer}>
             <Image style={styles.image} source={{uri: image}} />
             <CardView style={styles.card}>
             <Text style={styles.title}>
@@ -19,7 +20,7 @@ export default function Details({ route }) {
                 {desc}
             </Text>
             </CardView>
-        </View>
+        </FadeInView>
         </ScrollView>
         
     );
