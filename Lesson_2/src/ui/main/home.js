@@ -38,7 +38,7 @@ export default function ({ navigation }) {
     function addItemPressHandler(item) {
 
         item.id = Math.random().toString();
-        item.image = 'https://image.shutterstock.com/image-photo/islamabad-pakistan-april-25-2019-260nw-1407461093.jpg'
+        //item.image = 'https://image.shutterstock.com/image-photo/islamabad-pakistan-april-25-2019-260nw-1407461093.jpg'
         setItem((prevItems) => {
             return [item, ...prevItems];
         });

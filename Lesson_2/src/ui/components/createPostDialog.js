@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Formik } from 'formik';
-import { StyleSheet, Modal, TouchableHighlight, View, Text, Button, TextInput } from 'react-native';
+import { StyleSheet, Image, TouchableHighlight, View, Text, Button, TextInput } from 'react-native';
 import * as yup from 'yup';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -21,6 +21,7 @@ export default function ({ navigation, hide, showDialog, addItemPressHandler }) 
         function setCapturedImageUri(uri){
             console.log("received: "+uri);
             setImageUri(uri);
+            console.log("actual: "+imageUri);
         }
 
         return (
@@ -51,9 +52,16 @@ export default function ({ navigation, hide, showDialog, addItemPressHandler }) 
                                 initialValues={{
                                     title: '',
                                     desc: '',
+                                    image: ''
                                 }}
                                 onSubmit={values => {
                                     console.log(values);
+                                    if(imageUri != ''){
+                                        values.image = imageUri;
+                                    } else {
+                                        values.image = 'https://image.shutterstock.com/image-photo/islamabad-pakistan-april-25-2019-260nw-1407461093.jpg';
+                                    }
+                                    //values.image = imageUri;
                                     addItemPressHandler(values);
                                 }}
 
@@ -82,18 +90,25 @@ export default function ({ navigation, hide, showDialog, addItemPressHandler }) 
                                         { props.touched.desc && props.errors.desc &&
                                             <Text style={styles.textError}> {props.errors.desc}</Text>
                                         }
+                                        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                                         <View style={{ margin: 10, width: 30 }}>
                                             <Icon
                                                 name='camera'
                                                 title='Take photo'
                                                 onPress={() => {
                                                     // showModal()
-                                                    navigation.navigate('Camera', { myData:setCapturedImageUri })
+                                                    navigation.navigate('Camera', { callback: setCapturedImageUri })
                                                     // <Camera />
                                                 }}
                                                 size={30}
                                             />
                                         </View>
+
+
+                                        <Image style={{ width: 50, height: 50}} source={{ uri: imageUri}} />
+
+                                        </View>
+                                        
 
                                         <View style={{ margin: 10 }}>
                                             <Button
