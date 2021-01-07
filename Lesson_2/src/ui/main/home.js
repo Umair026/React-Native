@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { StyleSheet, Image, View, Button, Text, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Modal, Image, TouchableHighlight, View, Button, Text, TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import Card from '../components/CardView';
 import HomeModal from '../components/HomeModal';
 import Header from '../components/header';
+import Dialog from '../components/createPostDialog';
 
 export default function ({ navigation }) {
 
     const [isModalVisible, setModalVisibility] = useState(false)
+    const [hideDialog, setDialogVisiblity] = useState(true)
     const [items, setItem] = useState([
         {
             id: '1',
@@ -34,30 +36,36 @@ export default function ({ navigation }) {
     }
 
     function addItemPressHandler(item) {
-        
+
         item.id = Math.random().toString();
         item.image = 'https://image.shutterstock.com/image-photo/islamabad-pakistan-april-25-2019-260nw-1407461093.jpg'
         setItem((prevItems) => {
             return [item, ...prevItems];
         });
-        onPressHandler();
+        showDialog();
 
     }
 
+    function showDialog() {
+        setDialogVisiblity(!hideDialog);
+    }
+
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <Header navigation={navigation} />
 
             <View style={{ margin: 10, alignItems: 'flex-end' }}>
                 <Button
-                    title='Create New' onPress={() => onPressHandler()} />
+                    title='Create New' onPress={() => showDialog(true)} />
             </View>
 
-            <HomeModal
+            {/* <HomeModal
                 navigation={navigation}
-                test={isModalVisible}
+                isModalVisible={isModalVisible}
                 showModal={onPressHandler}
-                addItemPressHandler={ addItemPressHandler } />
+                addItemPressHandler={ addItemPressHandler } /> */}
+
+
 
             <FlatList
                 data={items}
@@ -77,6 +85,16 @@ export default function ({ navigation }) {
                         </Card>
                     </TouchableOpacity>
                 )}
+
+
+            />
+
+
+            <Dialog
+                navigation={navigation}
+                hide={hideDialog}
+                showDialog={showDialog}
+                addItemPressHandler={addItemPressHandler}
             />
         </View>
 
