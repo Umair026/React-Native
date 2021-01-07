@@ -6,7 +6,7 @@ import { RNCamera } from 'react-native-camera';
 
 export default function ({ navigation, route }) {
 
-    const { myData } = route;
+    
     const [isVisible, setVisibility] = useState(true)
     var { TemporaryDirectoryPath } = require('react-native-fs');
 
@@ -16,7 +16,8 @@ export default function ({ navigation, route }) {
             const options = { quality: 0.5, base64: true, path: TemporaryDirectoryPath + Math.random() + '.jpg' };
             const data = await camera.takePictureAsync(options);
             console.log(data.uri);
-
+            route.params.callback(data.uri);
+            
             // myData(data.uri);
             // navigation.goBack();
             // await AsyncStorage.setItem('@imageURI', data.uri);
