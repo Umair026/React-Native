@@ -1,0 +1,10 @@
+{
+    "home": {
+        "title:" : "Title1",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis accumsan nunc, ut pulvinar lacus. Aenean iaculis purus quis ante pellentesque egestas. Praesent eget mauris mauris. Curabitur pulvinar magna eget elit pellentesque scelerisque. Praesent ullamcorper eros sem, vitae dignissim ante efficitur eget. Nullam pulvinar arcu sapien, eget vehicula ex placerat et. Pellentesque accumsan scelerisque lorem, quis rhoncus ex consequat ut. Donec ante mauris, hendrerit nec commodo et, ultrices id dui. Cras lacinia sapien nec euismod auctor. Donec lobortis est sed egestas molestie. Duis ac suscipit ex. Integer enim sem, luctus vel quam eu, mattis auctor libero Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis accumsan nunc, ut pulvinar lacus. Aenean iaculis purus quis ante pellentesque egestas. Praesent eget mauris mauris. Curabitur pulvinar magna eget elit pellentesque scelerisque. Praesent ullamcorper eros sem, vitae dignissim ante efficitur eget. Nullam pulvinar arcu sapien, eget vehicula ex placerat et. Pellentesque accumsan scelerisque lorem, quis rhoncus ex consequat ut. Donec ante mauris, hendrerit nec commodo et, ultrices id dui. Cras lacinia sapien nec euismod auctor. Donec lobortis est sed egestas molestie. Duis ac suscipit ex. Integer enim sem, luctus vel quam eu, mattis auctor",
+        "details": "Go to details"
+    },
+    "header": {
+        "title": "My Custom Header"
+    }
+}

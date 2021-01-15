@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -30,6 +30,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginStack from './ui/stacks/LoginStack';
 import DrawerStack from './ui/stacks/DrawerStack';
 
+import LanguageContext  from './ui/hooks/languageHook';
+import { setLocal } from './i18n';
+
 function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -40,9 +43,22 @@ function HomeScreen() {
 
 const Stack = createStackNavigator();
 
+
 const App = () => {
+
+  const [language, setLanguage] = useState("en");
+  const value = { language, setLanguage };
+
+  // useEffect(() => {
+  //   console.log('App: '+language);
+  //   setLocal(language);
+  // }, [language])
+
   return (
-    <DrawerStack />
+    <LanguageContext.Provider value={value}>
+      <DrawerStack />
+    </LanguageContext.Provider>
+    
 
   );
 };

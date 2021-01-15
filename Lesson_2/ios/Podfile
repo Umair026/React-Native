@@ -14,6 +14,8 @@ target 'Lesson_2' do
 
   pod 'RNFS', :path => '../node_modules/react-native-fs'
 
+  pod 'react-native-restart', :path => '../node_modules/react-native-restart'
+
   target 'Lesson_2Tests' do
     inherit! :complete
     # Pods for testing

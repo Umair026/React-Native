@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { StyleSheet, Modal, Image, TouchableHighlight, View, Button, Text, TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import Card from '../components/CardView';
-import HomeModal from '../components/HomeModal';
 import Header from '../components/header';
 import Dialog from '../components/createPostDialog';
+
+import { strings } from '../../i18n';
+import LanguageContext from '../hooks/languageHook';
+import { setLocal } from '../../i18n'
 
 export default function ({ navigation }) {
 
@@ -49,6 +52,10 @@ export default function ({ navigation }) {
     function showDialog() {
         setDialogVisiblity(!hideDialog);
     }
+    const {language, setLanguage} = useContext(LanguageContext)
+    useEffect(() => {
+        setLocal(language);
+    }, [language])
 
     return (
         <View style={{ flex: 1 }}>
@@ -56,7 +63,7 @@ export default function ({ navigation }) {
 
             <View style={{ margin: 10, alignItems: 'flex-end' }}>
                 <Button
-                    title='Create New' onPress={() => showDialog(true)} />
+                    title={strings('createNew')} onPress={() => showDialog(true)} />
             </View>
 
             {/* <HomeModal
@@ -65,8 +72,6 @@ export default function ({ navigation }) {
                 showModal={onPressHandler}
                 addItemPressHandler={ addItemPressHandler } /> */}
 
-
-
             <FlatList
                 data={items}
                 keyExtractor={item => item.id}
@@ -74,9 +79,9 @@ export default function ({ navigation }) {
                     <TouchableOpacity>
                         <Card>
                             <Image style={styles.image} source={{ uri: item.image }} />
-                            <Text style={styles.title}>{item.title}</Text>
-                            <Text style={styles.text}>{item.desc.substring(0, 300)}</Text>
-                            <Button title='Go to details' onPress={() => navigation.navigate('Details',
+                            <Text style={styles.title}>{strings('title')}</Text>
+                            <Text style={styles.text}>{ strings('desc') }</Text>
+                            <Button title={strings('details')} onPress={() => navigation.navigate('Details',
                                 {
                                     title: item.title,
                                     desc: item.desc,
