@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../main/home';
 import Details from '../main/details';
 import CameraView from '../components/camera';
-import Header from '../components/header';
+import { strings } from '../../i18n';
 
 const Stack = createStackNavigator();
 
@@ -18,7 +18,8 @@ export default function ({navigation}) {
                 //     }
                 // }
                  />
-            <Stack.Screen name='Details' component={Details} />            
+                 
+            <Stack.Screen name='Details' options={{title: strings('Title-Detail')}} component={Details} />            
             <Stack.Screen name='Camera' component={CameraView} />
         </Stack.Navigator>
     );

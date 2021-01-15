@@ -10,7 +10,7 @@ export default function (props) {
 
     useEffect(() => {
         Animated.timing(
-            fadeAnim, { toValue: 1, duration: 800, }
+            fadeAnim, { toValue: 1, duration: 800, useNativeDriver: true  }
         ).start();
     }, [fadeAnim])
 

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import {StyleSheet,View,Text,Button,Image} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import CardView from '../components/CardView'
 import FadeInView from '../components/fadeInView';
+import { setLocal, strings } from '../../i18n'
 
 export default function Details({ route }) {
 
-    const { title,desc, image } = route.params;
+    const { title,desc, image } = route?.params;
     
     return(
         <ScrollView>
@@ -14,10 +15,10 @@ export default function Details({ route }) {
             <Image style={styles.image} source={{uri: image}} />
             <CardView style={styles.card}>
             <Text style={styles.title}>
-                {title}
+                {strings('title')}
             </Text>
             <Text style={styles.paragraph}>
-                {desc}
+                {strings('desc')}
             </Text>
             </CardView>
         </FadeInView>
